@@ -1,0 +1,8 @@
+The API I would use will be REST API as it is lightweight.
+Create a table with columns userID, APIID, currentMaxResponseTime, AvgResponse, and 24hrResponse.
+Everytime a user hits API, async process to calculate average response time till then will be stored in 1hr response field.
+For example, for first time, user 1 hits API takes 60 sec, then keep 60 sec in 1hr column
+For second time, user hits API takes 57 sec, then avg will be 58.5 sec and update in column.
+1hr response will be (current value + existing) / 2. 
+After every hr, update 24hrResponse column.
+For currentMaxResponseTime column, first insert min value of response time and then insert the maximum response time.
